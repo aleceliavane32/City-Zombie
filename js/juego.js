@@ -18,10 +18,25 @@ var Juego = {
   ganador: false,
 
   obstaculosCarretera: [
-    /*Aca se van a agregar los obstaculos visibles. Tenemos una valla horizontal
-    de ejemplo, pero podras agregar muchos mas. */
-    new Obstaculo('imagenes/valla_horizontal.png', 70, 430, 30, 30, 1)
-
+    /*Aca se vamos a agregar los obstaculos visibles.*/
+    new Obstaculo('imagenes/valla_vertical.png', 80, 170, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 60, 200, 30, 30, 1),
+    new Obstaculo('imagenes/valla_horizontal.png', 70, 430, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 80, 420, 30, 30, 1),
+    new Obstaculo('imagenes/valla_vertical.png', 180, 380, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 190, 390, 30, 30, 1),
+    new Obstaculo('imagenes/valla_horizontal.png', 360, 80, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 330, 90, 30, 30, 1),
+    new Obstaculo('imagenes/valla_vertical.png', 420, 100, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 410, 120, 30, 30, 1),
+    new Obstaculo('imagenes/valla_horizontal.png', 500, 350, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 480, 340, 30, 30, 1),
+    new Obstaculo('imagenes/valla_vertical.png', 790, 400, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 820, 380, 30, 30, 1),
+    new Obstaculo('imagenes/valla_horizontal.png', 790, 280, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 800, 300, 30, 30, 1),
+    new Obstaculo('imagenes/valla_vertical.png', 760, 90, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 750, 110, 30, 30, 1),
   ],
   /* Estos son los bordes con los que se puede chocar, por ejemplo, la vereda.
    Ya estan ubicados en sus lugares correspondientes. Ya aparecen en el mapa, ya
@@ -44,7 +59,7 @@ var Juego = {
   ],
   // Los enemigos se agregaran en este arreglo.
   enemigos: [
-
+    
   ]
 
 }
