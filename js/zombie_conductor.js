@@ -4,12 +4,28 @@ Por ejemplo, la cantidad parametros que recibe su constructor. En ZombieConducto
 no son exactamente los mismos parametros que en el objeto Enemigo, a diferencia
 del ZombieCaminante que eran los mismos. */
 
-var ZombieConductor = function(sprite, x, y, ancho, alto, velocidad, rangoMov/*, parametro/s extra de ZombieConductor*/) {
-  /* Completar constructor a partir de Enemigo */
-  //Enemigo.call(/* ... */);
-  /* No olvidar agregar la/s propiedad/es unicas de ZombieConductor necesarias */
+var ZombieConductor = function(sprite, x, y, ancho, alto, velocidad, rangoMov,direccion) {
+Enemigo.call(this, sprite, x, y, ancho, alto, velocidad, rangoMov);
+this.direccion = direccion;
 }
+ZombieConductor.prototype = Object.create(Enemigo.prototype);
+ZombieConductor.prototype.constructor = ZombieConductor;
 
-/* Completar creacion del ZombieConductor */
+ZombieConductor.prototype.mover = funcion(){
+  if (this.direccion == 'h') {
+    this.x += this.velocidad;
+    if ((this.x < this.rangoMov.desdeX) || (this.x > this.rangoMov.hastaX)) {
+      this.velocidad *= -1;
+    }
 
-/* Completar metodos para el movimiento y el ataque */
+  }
+  if (this.direccion == 'v') {
+    this.y += this.velocidad;
+    if ((this.y < this.rangoMov.desdeY)|| (this.y > this.rangoMov.hastaY)) {
+      this.velocidad *= -1;
+    }
+  }
+}
+ZombieConductor.prototype.atacar = funcion(jugador){
+  jugador.perderVidas(jugador.vidas);
+}

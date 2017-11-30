@@ -32,9 +32,9 @@ Jugador.mover = funcion(x,y) {
     this.ancho = 15;
     this. alto = 30;
   }
-  this.x = x;
-  this.y = y;
+  this.x += x;
+  this.y += y;
 }
 juador.perderVidas =  function(cantVidas){
-  this.vidas -=cantVidas;
+  this.vidas -= cantVidas;
 }
