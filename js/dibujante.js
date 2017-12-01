@@ -38,3 +38,10 @@ var Dibujante = {
     ctx.fillRect(x, y, ancho, alto);
   },
 }
+
+dibujarTexto: function (fuente, color,texto, x, y){
+  var ctx= this. canvas.getContext('2d');
+  ctx.font= fuente;
+  ctx.fillStyle= color;
+  ctx.fillText(texto, x, y);
+},
