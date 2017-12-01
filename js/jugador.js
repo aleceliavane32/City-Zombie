@@ -14,7 +14,7 @@ var Jugador = {
   // y todo lo que haga falta para que cumpla con sus responsabilidades
 
 }
-Jugador.mover = funcion(x,y) {
+Jugador.mover = function(x,y){
   if (x>0) {
     this.sprite = "imagenes/auto_rojo_derecha.png";
     this.ancho = 30;
@@ -34,7 +34,8 @@ Jugador.mover = funcion(x,y) {
   }
   this.x += x;
   this.y += y;
-}
-juador.perderVidas =  function(cantVidas){
+};
+
+Jugador.perderVidas = function(cantVidas){
   this.vidas -= cantVidas;
 }

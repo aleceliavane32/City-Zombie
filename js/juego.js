@@ -27,16 +27,14 @@ var Juego = {
     new Obstaculo('imagenes/bache.png', 190, 390, 30, 30, 1),
     new Obstaculo('imagenes/valla_horizontal.png', 360, 80, 30, 30, 1),
     new Obstaculo('imagenes/bache.png', 330, 90, 30, 30, 1),
-    new Obstaculo('imagenes/valla_vertical.png', 420, 100, 30, 30, 1),
-    new Obstaculo('imagenes/bache.png', 410, 120, 30, 30, 1),
+    new Obstaculo('imagenes/auto_verde_abajo.png', 170, 280, 15, 30, 1),
     new Obstaculo('imagenes/valla_horizontal.png', 500, 350, 30, 30, 1),
     new Obstaculo('imagenes/bache.png', 480, 340, 30, 30, 1),
     new Obstaculo('imagenes/valla_vertical.png', 790, 400, 30, 30, 1),
-    new Obstaculo('imagenes/bache.png', 820, 380, 30, 30, 1),
+    new Obstaculo('imagenes/bache.png', 820, 480, 30, 30, 1),
     new Obstaculo('imagenes/valla_horizontal.png', 790, 280, 30, 30, 1),
     new Obstaculo('imagenes/bache.png', 800, 300, 30, 30, 1),
-    new Obstaculo('imagenes/auto_rojo_abajo.png', 840; 3);
-    new Obstaculo('imagenes/valla_vertical.png', 760, 90, 30, 30, 1),
+    new Obstaculo('imagenes/auto_verde_derecha.png', 840, 170, 30, 15, 1),
     new Obstaculo('imagenes/bache.png', 750, 110, 30, 30, 1),
 
   ],
@@ -61,56 +59,71 @@ var Juego = {
   ],
   // Los enemigos se agregaran en este arreglo.
   enemigos: [
-    new zombieCaminante('imagenes/zombie1.png', 390, 155, 10, 10, 1{
+
+    new ZombieCaminante('imagenes/zombie1.png', 390, 155, 10, 10, 1, {
       desdeX: 0,
       hastaX: 961,
       desdeY: 0,
       hastaY: 577
     }),
-    new zombieCaminante('imagenes/zombie1.png', 385, 150, 10, 10, 1{
+
+    new ZombieCaminante('imagenes/zombie2.png', 290, 320, 10, 10, 1, {
+      desdeX: 0,
+      hastaX: 961,
+      desdeY: 577,
+      hastaY: 0
+    }),
+
+    new ZombieCaminante('imagenes/zombie3.png', 280, 480, 10, 10, 1, {
       desdeX: 0,
       hastaX: 961,
       desdeY: 0,
-      hastaY: 577,
+      hastaY: 577
     }),
-    new zombieCaminante('imagenes/zombie1.png', 380, 155, 10, 10, 1{
+
+    new ZombieCaminante('imagenes/zombie4.png', 160, 235, 10, 10, 1, {
       desdeX: 0,
       hastaX: 961,
       desdeY: 0,
-      hastaY: 577,
+      hastaY: 577
     }),
+
   new ZombieConductor('imagenes/tren_vertical.png', 644, 0, 30, 90, 10, {
-    desdeX:0,
-    hastaX:961,
+    desdeX: 0,
+    hastaX: 961,
     desdeY: -20,
-    hastaY: 600,
-  }'v'),
+    hastaY: 600
+  },'v'),
+
   new ZombieConductor('imagenes/tren_vertical.png', 660, 0, 30, 90, 4, {
     desdeX: 0,
     hastaX: 961,
     desdeY: -15,
     hastaY: 600
-  }'v'),
+  },'v'),
+
   new ZombieConductor('imagenes/tren_vertical.png', 678, 0, 30, 90, 8, {
     desdeX: 0,
     hastaX: 961,
     desdeY: -20,
     hastaY: 600
-  }'v'),
+  },'v'),
+
   new ZombieConductor('imagenes/tren_horizontal.png', 400, 322, 90, 30, 11, {
     desdeX: 0,
     hastaX: 961,
     desdeY: 0,
     hastaY: 577
-  }'h'),
-  ]
+  },'h'),
 
+  ]
 }
 
 /* Se cargan los recursos de las imagenes, para tener un facil acceso
 a ellos. No hace falta comprender esta parte. Pero si queres agregar tus propies
 imagenes tendras que poner su ruta en la lista para que pueda ser precargada como
 todas las demas. */
+
 Juego.iniciarRecursos = function() {
   Resources.load([
     'imagenes/mapa.png',
@@ -204,6 +217,8 @@ Juego.dibujar = function() {
   utilizando al dibujante y los metodos que nos brinda.
   "Dibujante dibuja al jugador" */
 
+  /*Completa*/
+
   Dibujante.dibujarEntidad(this.jugador);
 
   // Se recorren los obstaculos de la carretera pintandolos
@@ -213,7 +228,6 @@ Juego.dibujar = function() {
 
   // Se recorren los enemigos pintandolos
   this.enemigos.forEach(function(enemigo) {
-  Dibujante.dibujarEntidad(funcion(enemigo));
   Dibujante.dibujarEntidad(enemigo);
   });
 
